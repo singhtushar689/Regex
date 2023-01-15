@@ -16,15 +16,22 @@ namespace UserRegistrationDetails
             string regexCondition = "^[A-Z]{1}[a-z]{2,}$";
             Iteration(firstName, regexCondition);
         }
+        public static void LastName()      //UC2
+        {
+            Console.WriteLine("Enter your Last Name");
+            string userInput = Console.ReadLine();
+            string regexCondition = "^[A-Z]{1}[a-z]{3,}$";
+            Iteration(userInput, regexCondition);
+        }
         public static void Iteration(string firstName,string regexCondition)
         {
             if (Regex.IsMatch(firstName, regexCondition))
             {
-                Console.WriteLine("Pattern is not Matching! \n Try Again!");
+                Console.WriteLine("Validated Successfully");
             }
             else
             {
-                Console.WriteLine("Pattern is Matching");
+                Console.WriteLine("Pattern is not Matching....Try Again!");
             }
         }    
     }
