@@ -13,7 +13,9 @@ namespace UserRegistrationDetails
               "Press 4: To enter Your Mobile Number \n" + 
               "Press 5 :To enter Minimun 8 Char Password \n" +
               "Press 6: To Enter Atleast 1Upper case Password \n" + 
-              "Press 7: To Enter PassWord With 1Numeric");
+              "Press 7: To Enter PassWord With 1Numeric\n" +
+              "Press 8: To Enter Special Character \n" + 
+              "Press 9: To Enter EmailId Sample");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option) 
             {
@@ -37,6 +39,12 @@ namespace UserRegistrationDetails
                     break;
                 case 7:
                     Pattern.UpperCase1AndNumeric1();
+                    break;
+                case 8:
+                    Pattern.SpecialCharacter1();
+                    break;
+                case 9:
+                    Pattern.EmailSample();
                     break;
                 default:
                     Console.WriteLine("Enter valid option ...try again!");

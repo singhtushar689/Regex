@@ -23,7 +23,7 @@ namespace UserRegistrationDetails
             string regexCondition = "^[A-Z]{1}[a-z]{3,}$";
             Iteration(userInput, regexCondition);
         }
-        public static void EmailID()
+        public static void EmailID()            //UC3
         {
             Console.WriteLine("Enter your Email ID");
             string userInput = Console.ReadLine();
@@ -58,16 +58,34 @@ namespace UserRegistrationDetails
             string regexCondition = "^(?=.*[A-Z]).{1,}(?=.*[0-9]).{1,}[a-zA-Z0-9]{6,}$";
             Iteration(userInput, regexCondition);
         }
-
-        public static void Iteration(string firstName,string regexCondition)
+        public static void SpecialCharacter1() //UC8 (all condition same as previous+ 1 exact special Char.)
         {
-            if (Regex.IsMatch(firstName, regexCondition))
+            Console.WriteLine("Enter your Password");
+            string userInput = Console.ReadLine();
+            string regexCondition = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$";
+            Iteration(userInput, regexCondition);
+        }
+        public static void EmailSample()        //UC9  Email Samples Validation .
+        {
+            string[] userInput = {"abc@yahoo.com","abc-100@yahoo.com"
+                    ,"abc.100@yahoo.com",
+                 "abc111@abc.com",          "abc-100@abc.net",           "abc.100@abc.com.au",
+                 "abc@1.com",    "abc@gmail.com.com",        "abc+100@gmail.com",
+                  "abc","abc@.com.my",      "abc123@gmail.a",       "abc123@.com",    "abc123@.com.com",
+                ".abc@abc.com",        "abc()*@gmail.com",       "abc@%*.com",
+                  "abc..2002@gmail.com",      "abc.@gmail.com",        "abc@abc@gmail.com",         
+                "abc@gmail.com.1a",      "abc@gmail.com.aa.au"};
+            string regexCondition = "^[a-z0-9]{1,}([._+-]{1}[a-z0-9]{1,}){0,1}[@]{1}[a-z0-9]{1,}[.]{1}[a-zA-Z]{2,3}([.]{1}[a-z]{2,3}){0,1}$";
+            foreach (string input in userInput)
             {
-                Console.WriteLine("Validated Successfully");
-            }
-            else
-            {
-                Console.WriteLine("Pattern is not Matching....Try Again!");
+                if (Regex.IsMatch(input, regexCondition))
+                {
+                    Console.WriteLine($"{input} --> Valid");
+                }
+                else
+                {
+                    Console.WriteLine($"{input} --> Invalid");
+                }
             }
         }    
     }
