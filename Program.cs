@@ -11,7 +11,8 @@ namespace UserRegistrationDetails
               "Press 2: To Register your Last Name \n" + 
               "Press 3: To enter your Email ID .\n" +
               "Press 4: To enter Your Mobile Number \n" + 
-              "Press 5 :To enter Minimun 8 Char Password");
+              "Press 5 :To enter Minimun 8 Char Password \n" +
+              "Press 6: To Enter Atleast 1Upper case Password");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option) 
             {
@@ -29,6 +30,9 @@ namespace UserRegistrationDetails
                     break;
                 case 5:
                     Pattern.PassMin8Char();
+                    break;
+                case 6:
+                    Pattern.PassMin8CharAnd1UpperCase();
                     break;
                 default:
                     Console.WriteLine("Enter valid option ...try again!");
