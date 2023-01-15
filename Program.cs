@@ -8,7 +8,9 @@ namespace UserRegistrationDetails
         {
             Console.WriteLine("Please select any one from below :\n" +
               "Press 1 : To Register your First Name.\n" +
-              "Press 2: To Register your Last Name \n" + "Press 3: To enter your Email ID .\n");
+              "Press 2: To Register your Last Name \n" + 
+              "Press 3: To enter your Email ID .\n" +
+              "Press 4: To enter Your Mobile Number");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option) 
             {
@@ -20,6 +22,9 @@ namespace UserRegistrationDetails
                     break;
                 case 3:
                     Pattern.EmailID();
+                    break;
+                case 4:
+                    Pattern.MobileNumber();
                     break;
                 default:
                     Console.WriteLine("Enter valid option ...try again!");
